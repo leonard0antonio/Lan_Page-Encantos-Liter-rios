@@ -1,0 +1,248 @@
+/* VARIABLES */
+:root {
+  --bg: #faf5ff;
+  --primary: #7b4bff;
+  --text: #2b2b2b;
+  --card: #ffffff;
+  --radius: 18px;
+  --shadow: 0 10px 25px rgba(0,0,0,0.08);
+  --container: 1200px;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg);
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+}
+
+.container {
+  width: 90%;
+  max-width: var(--container);
+  margin: auto;
+}
+
+/* NAV */
+.nav {
+  background: white;
+  box-shadow: var(--shadow);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+nav ul {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  padding: 80px 0;
+}
+
+.hero-inner {
+  display: grid;
+  gap: 40px;
+}
+
+.hero-text h2 {
+  font-size: 2.3rem;
+  margin-bottom: 14px;
+}
+
+.hero-text p {
+  margin-bottom: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 14px 26px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #6840d9;
+}
+
+.hero-img {
+  height: 300px;
+  background: linear-gradient(135deg, #d9c6ff, #f0e8ff);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+/* SECTIONS */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* BENEFÍCIOS */
+.beneficios {
+  padding: 80px 0;
+}
+
+.beneficios-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.card {
+  background: var(--card);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* ANIMAÇÕES */
+.fade-in {
+  animation: fade 1s ease forwards;
+  opacity: 0;
+}
+
+.fade-in-delay {
+  animation: fade 1.3s ease forwards;
+  opacity: 0;
+}
+
+.fade-in-delay2 {
+  animation: fade 1.6s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fade {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(20px); }
+}
+
+/* LIVRO SURPRESA */
+.surpresa {
+  padding: 80px 0;
+}
+
+.surpresa-inner {
+  display: grid;
+  gap: 40px;
+}
+
+.surpresa-img {
+  height: 280px;
+  background: linear-gradient(135deg,#caa8ff,#f3eaff);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.slide-left {
+  animation: slide-left 1s ease forwards;
+  opacity: 0;
+}
+
+@keyframes slide-left {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* PLANOS */
+.planos {
+  padding: 80px 0;
+}
+
+.planos-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.plano {
+  background: white;
+  padding: 28px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: .3s;
+}
+
+.plano .preco {
+  margin: 14px 0;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.destaque {
+  background: #f4edff;
+  border: 2px solid var(--primary);
+}
+
+.zoom:hover {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 30px;
+  margin-top: 20px;
+  color: #666;
+}
+
+/* RESPONSIVIDADE */
+@media (min-width: 768px) {
+  .hero-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .beneficios-grid,
+  .planos-grid,
+  .surpresa-inner {
+    grid-template-columns: repeat(3,1fr);
+  }
+
+  .surpresa-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
